@@ -5,8 +5,13 @@ namespace JwtAuthDotNet9.Services
 {
     public interface IAuthService
     {
-        Task<User?> RegisterAsync(UserDto request);
-        Task<TokenResponseDto?> LoginAsync(UserDto request);
-        Task<TokenResponseDto?> RefreshTokensAsync(RefreshTokenRequestDto request);
+
+
+
+        // Authentifier un utilisateur (login)
+        Task<AuthResponseDTO?> LoginAsync(LoginDTO request);
+
+        // Rafraîchir un AccessToken via un RefreshToken
+        Task<AuthResponseDTO?> RefreshTokensAsync(RefreshTokenRequestDTO request);
     }
 }
